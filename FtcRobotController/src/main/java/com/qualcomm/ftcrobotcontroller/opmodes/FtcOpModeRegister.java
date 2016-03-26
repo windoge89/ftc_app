@@ -58,6 +58,5 @@ public class FtcOpModeRegister implements OpModeRegister {
       manager.register("Mecanum TeleOp", MecanumTeleOp.class);
       manager.register("Mecanum Autonomous Test", MecanumAutonomous.class);
       manager.register("Mecanum Gyro Test", MecanumAutonomousGyro.class);
-      manager.register("Test commit", K9TeleOp.class);
   }
 }
