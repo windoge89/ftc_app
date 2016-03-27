@@ -137,7 +137,7 @@ public class MecanumAutonomousGyro extends OpMode {
             step++;
         }
     }
-    public void turnLeftRelativeToStart(double degrees){
+    public void turnLeftOn360Plane(double degrees){
         motorFrontLeft.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
         motorFrontRight.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
         motorRearLeft.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
@@ -152,7 +152,7 @@ public class MecanumAutonomousGyro extends OpMode {
             step++;
         }
     }
-    public void turnRightRelativeToStart(double degrees){
+    public void turnRightOn360Plane(double degrees){
         motorFrontLeft.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
         motorFrontRight.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
         motorRearLeft.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
@@ -274,13 +274,13 @@ public class MecanumAutonomousGyro extends OpMode {
                 resetEncoders();
                 break;
             case 3:
-                turnLeftRelativeToStart(270);
+                turnLeftOn360Plane(270);
                 break;
             case 4:
                 resetEncoders();
                 break;
             case 5:
-                turnRightRelativeToStart(90);
+                turnRightOn360Plane(90);
                 break;
             case 6:
                 resetEncoders();
