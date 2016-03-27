@@ -137,6 +137,37 @@ public class MecanumAutonomousGyro extends OpMode {
             step++;
         }
     }
+    public void turnLeftRelativeToStart(double degrees){
+        motorFrontLeft.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
+        motorFrontRight.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
+        motorRearLeft.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
+        motorRearRight.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
+
+        motorFrontLeft.setPower(-1);
+        motorFrontRight.setPower(1);
+        motorRearLeft.setPower(-1);
+        motorRearRight.setPower(1);
+
+        if(yawAngle[1] == degrees){
+            step++;
+        }
+    }
+    public void turnRightRelativeToStart(double degrees){
+        motorFrontLeft.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
+        motorFrontRight.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
+        motorRearLeft.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
+        motorRearRight.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
+
+        motorFrontLeft.setPower(1);
+        motorFrontRight.setPower(-1);
+        motorRearLeft.setPower(1);
+        motorRearRight.setPower(-1);
+
+        if(yawAngle[1] == degrees){
+            step++;
+        }
+    }
+    }
     /*public void turnLeft(double driveDistance){
         double Distance = 90.48399 * driveDistance;
         int roundedDistance = (int)Math.round(Distance);
@@ -243,13 +274,13 @@ public class MecanumAutonomousGyro extends OpMode {
                 resetEncoders();
                 break;
             case 3:
-
+                turnLeftRelativeToStart(270);
                 break;
             case 4:
-
+                resetEncoders();
                 break;
             case 5:
-
+                turnRightRelativeToStart(90);
                 break;
             case 6:
                 resetEncoders();
