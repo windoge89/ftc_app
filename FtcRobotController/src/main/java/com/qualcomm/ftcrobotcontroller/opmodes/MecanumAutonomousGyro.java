@@ -167,7 +167,6 @@ public class MecanumAutonomousGyro extends OpMode {
             step++;
         }
     }
-    }
     /*public void turnLeft(double driveDistance){
         double Distance = 90.48399 * driveDistance;
         int roundedDistance = (int)Math.round(Distance);
