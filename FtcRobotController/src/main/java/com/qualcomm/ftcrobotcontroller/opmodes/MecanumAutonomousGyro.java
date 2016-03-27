@@ -31,7 +31,7 @@ public class MecanumAutonomousGyro extends OpMode {
     }
 
 
-    public void driveStraight(double driveDistance){
+    public void driveStraight(double driveDistance){ //Drives straight for a specified amount of inches.
         double Distance = 90.48399 * driveDistance;
         int roundedDistance = (int)Math.round(Distance);
         motorFrontLeft.setTargetPosition(roundedDistance);
@@ -53,7 +53,7 @@ public class MecanumAutonomousGyro extends OpMode {
             step++;
         }
     }
-    public void driveDiagonalLeft(double driveDistance){
+    public void driveDiagonalLeft(double driveDistance){ //Using mecanum wheels, drives diagonal left forwards, diagonal right backwards for a specified amount of inches.
         double Distance = 90.48399 * driveDistance * 2;
         int roundedDistance = (int)Math.round(Distance);
         motorFrontRight.setTargetPosition(roundedDistance);
@@ -73,7 +73,7 @@ public class MecanumAutonomousGyro extends OpMode {
             step++;
         }
     }
-    public void driveDiagonalRight(double driveDistance){
+    public void driveDiagonalRight(double driveDistance){ //Using mecanum wheels, drives diagonal right forwards, diagonal right backwards for a specified amount of inches.
         double Distance = 90.48399 * driveDistance * 2;
         int roundedDistance = (int)Math.round(Distance);
         motorFrontLeft.setTargetPosition(roundedDistance);
@@ -93,7 +93,7 @@ public class MecanumAutonomousGyro extends OpMode {
             step++;
         }
     }
-    public void driveLeft(double driveDistance){
+    public void driveLeft(double driveDistance){ //Using mecanum wheels, drives left for a specified amount of inches.
         double Distance = 90.48399 * driveDistance * 2;
         int roundedDistance = (int)Math.round(Distance);
         motorFrontLeft.setTargetPosition(-roundedDistance);
@@ -115,7 +115,7 @@ public class MecanumAutonomousGyro extends OpMode {
             step++;
         }
     }
-    public void driveRight(double driveDistance){
+    public void driveRight(double driveDistance){ //Using mecanum wheels, drives right for a specified amount of inches.
         double Distance = 90.48399 * driveDistance * 2;
         int roundedDistance = (int)Math.round(Distance);
         motorFrontLeft.setTargetPosition(roundedDistance);
@@ -137,6 +137,11 @@ public class MecanumAutonomousGyro extends OpMode {
             step++;
         }
     }
+
+    //The following two methods turn using gyroscope to the orientation of the robot relative to the starting position.
+    // For example, turning to 270 degrees turns left 90 degrees, and turning to 90 degrees turns right 180 degrees,
+    // or 90 degrees to the right relative to the robot's starting position.
+
     public void turnLeftOn360Plane(double degrees){
         motorFrontLeft.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
         motorFrontRight.setMode(DcMotorController.RunMode.RUN_WITHOUT_ENCODERS);
@@ -167,6 +172,8 @@ public class MecanumAutonomousGyro extends OpMode {
             step++;
         }
     }
+
+    //THE FOLLOWING TURNING SYSTEM IS BASED ON INCHES, THEREFORE UNRELIABLE DUE TO FRICTION. USE GYRO METHOD INSTEAD.
 
     /*public void turnLeft(double driveDistance){
         double Distance = 90.48399 * driveDistance;
